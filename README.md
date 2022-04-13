@@ -8,5 +8,6 @@
 **Here is my learning sources**
 
  1. A Turkish book about Python: https://python-istihza.yazbel.com/ 
- 2. Github Repo: https://github.com/Asabeneh/30-Days-Of-Python
- 3. ...
+ 2. An English book about Python: https://goalkicker.com/PythonBook/ 
+ 3. Github Repo: https://github.com/Asabeneh/30-Days-Of-Python
+ 4. ...
