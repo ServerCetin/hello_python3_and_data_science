@@ -1,6 +1,3 @@
-# where is day 2? well, I overslept. After I woke up, I went to Data event and came home late.
-# so I could not study python :(
-
 print("Hello \t tabbed \t line")
 
 number = 1
