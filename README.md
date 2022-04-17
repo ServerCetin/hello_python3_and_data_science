@@ -10,4 +10,5 @@
  1. A Turkish book about Python: https://python-istihza.yazbel.com/ 
  2. An English book about Python: https://goalkicker.com/PythonBook/ 
  3. Github Repo: https://github.com/Asabeneh/30-Days-Of-Python
- 4. ...
+ 4. https://www.w3schools.com/python/
+ 5. ...
