@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Has no title</title>
+    {% endif %}
+</head>
+<body>
+<h1>Welcome to {{title}}</h1>
+<ul>
+    {% for hobby in hobbies %}
+    <li>{{hobby}}</li>
+    {% endfor %}
+</ul>
+  <a class="nav-link active" href="{{ url_for('home') }}">Go to home</a>
+
+</body>
+</html>
