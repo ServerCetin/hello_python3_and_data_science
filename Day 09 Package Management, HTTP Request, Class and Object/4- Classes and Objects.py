@@ -21,6 +21,7 @@ print(type(set1))  # <class 'set'>
 # current instance of the class
 
 class Human:
+
     def __init__(self, firstname, lastname, country, age=9):
         # self allows to attach parameter to the class
         self.firstname = firstname
@@ -33,21 +34,24 @@ class Human:
 
 
 class Programmer(Human):
+    instance_variable = "I am here!"
+    num_programmer = 0
+
     def __init__(self, firstname, lastname, country, interests=[]):
         super().__init__(firstname, lastname, country)
         self.interests = interests
+        Programmer.num_programmer += 1
 
     def add_interest(self, interest):
         self.interests.append(interest)
 
-    def who_am_i(self): # overriding
+    def who_am_i(self):  # overriding
         age_status = 'underaged' if self.age < 18 else 'overaged'
         return f'I am {self.firstname} {self.lastname}. I am from {self.country}. I am {age_status}. ' \
                f'I am interested in {self.interests}'
 
     def who_was_i(self):
         return super().who_am_i()
-
 
 
 server = Programmer('Server', 'ÇETİN', 'Turkey')
@@ -59,4 +63,5 @@ server.add_interest('Data Science')
 print(server.interests)
 print(server.who_am_i())
 print(server.who_was_i())
-
+print(Programmer.__dict__)  # attributes
+print(Programmer.instance_variable)  # attributes
