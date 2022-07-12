@@ -53,6 +53,14 @@ class Programmer(Human):
     def who_was_i(self):
         return super().who_am_i()
 
+    @classmethod
+    def fake_input(cls, num):  # cls olarak class aldığımızı belli ediyoruz parametrede
+        cls.num_programmer = num # Programmer.num_programmer = num
+
+    @staticmethod
+    def static_method_test(msg):
+        return msg
+
 
 server = Programmer('Server', 'ÇETİN', 'Turkey')
 print(server)  # <__main__.Human object at 0x0000017C712BDFD0>
@@ -65,3 +73,8 @@ print(server.who_am_i())
 print(server.who_was_i())
 print(Programmer.__dict__)  # attributes
 print(Programmer.instance_variable)  # attributes
+print(server.fake_input(1000))
+print(server.num_programmer)
+print(Programmer.num_programmer)
+print(Programmer.static_method_test("I do not need any object in my parameters!!"))
+print(server.static_method_test("I do not need any object in my parameters!!"))
