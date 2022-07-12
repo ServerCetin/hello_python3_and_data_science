@@ -63,3 +63,42 @@ def do_something(f, x):
 
 
 print(do_something(square_number, 3))  # 27
+
+
+def square_generator(list):  # generators not returns all values immediately, we need to ask it to generate value
+    for num in list:
+        yield (num * num)
+
+
+list = [1, 2, 3, 4, 5, 6]
+gen = square_generator(list)
+print(gen)  # <generator object square_generator at 0x0000020952A346D0>
+print(next(gen))  # 1
+print(next(gen))  # 4
+print(next(gen))  # 9
+print(next(gen))  # 16
+print(next(gen))  # 25
+print(next(gen))  # 36
+# print(next(gen))  # Exhaust:      Traceback (most recent call last): StopIteration
+
+
+# list comprehension and generator
+l = [x * x for x in [1, 2, 3, 4, 5, 6]]  # [1, 4, 9, 16, 25, 36]
+print(l)
+
+g = (x * x for x in [1, 2, 3, 4, 5, 6])  # [1, 4, 9, 16, 25, 36]
+print(next(g))  # 1
+
+# similar to range function
+def range_generator(start, end, step):
+    current = start
+
+    while current < end:
+        yield current
+        current += step
+
+r = range_generator(1,20,3)
+print(next(r)) # 1
+print(next(r)) # 4
+print(next(r)) # 7
+

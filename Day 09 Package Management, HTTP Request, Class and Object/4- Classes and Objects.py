@@ -61,6 +61,10 @@ class Programmer(Human):
     def static_method_test(msg):
         return msg
 
+    #  magic methods helps us to modify our classes, there are many magic methods like __add__ look at the docs
+    def __str__(self):
+        return f"I am Programmer(firstname:{self.firstname}, lastname:{self.lastname}, country: {self.country}) and my hobbies: {self.interests}"
+
 
 server = Programmer('Server', 'ÇETİN', 'Turkey')
 print(server)  # <__main__.Human object at 0x0000017C712BDFD0>
@@ -78,3 +82,4 @@ print(server.num_programmer)
 print(Programmer.num_programmer)
 print(Programmer.static_method_test("I do not need any object in my parameters!!"))
 print(server.static_method_test("I do not need any object in my parameters!!"))
+print(server) # returns __str__ method
